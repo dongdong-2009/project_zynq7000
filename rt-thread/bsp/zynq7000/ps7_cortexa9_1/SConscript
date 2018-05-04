@@ -1,0 +1,18 @@
+import rtconfig
+Import('RTT_ROOT')
+from building import *
+
+# get current directory
+cwd = GetCurrentDir()
+
+# The set of source files associated with this SConscript file.
+
+src = Glob('libsrc/*/*/*.c')
+
+path = [cwd ,cwd + '/include']
+
+CPPDEFINES = ['']
+DEPEND = ['']
+group = DefineGroup('XILINXLIB', src, depend = DEPEND, CPPPATH = path, CPPDEFINES = CPPDEFINES)
+
+Return('group')

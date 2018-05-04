@@ -1,0 +1,20 @@
+To run doxygen on the directory
+
+1. Change directory to 
+        MW_INSTALL_DIR/sw/solutions/instaspin_foc/boards/boostxldrv8301_revB/f28x/f2806xF
+2. Run doxygen: 
+
+        LINUX
+            rm -rf docs/html
+            rm -f stderr.txt stdout.txt
+    
+            (doxygen docs/doxygen/doxygen.cfg >stdout.txt) >&stderr.txt
+
+        WINDOWS
+            rmdir "docs/html" /s /q
+            rmdir "docs/latex" /s /q
+            rmdir "docs/xml" /s /q
+            del stderr.txt stdout.txt
+            doxygen docs/doxygen/doxygen.cfg >stdout.txt 2> stderr.txt 
+
+
